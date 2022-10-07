@@ -3,6 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1703.6
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modeles", "Modeles", "{D0281135-9343-4867-B468-B7F386544DF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classes", "Classes", "{1185C63F-2BBF-44B8-9DE5-A80EE44F6D64}"
+	ProjectSection(SolutionItems) = preProject
+		Personnage.cs = Personnage.cs
+		De.cs = De.cs
+		Heros.cs = Heros.cs
+		Nains.cs = Nains.cs
+		Monstres.cs = Monstres.cs
+		Orques.cs = Orques.cs
+		Dragonnet.cs = Dragonnet.cs
+		Loup.cs = Loup.cs
+		Humain.cs = Humain.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{D5381237-0DB9-4CB9-B445-83FD61F2286C}"
+	ProjectSection(SolutionItems) = preProject
+		Outils.cs = Outils.cs
+		IOr.cs = IOr.cs
+		ICuir.cs = ICuir.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 	EndGlobalSection
@@ -13,5 +35,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {471F4F4F-9E71-4A89-B5E2-85598874D83A}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1185C63F-2BBF-44B8-9DE5-A80EE44F6D64} = {D0281135-9343-4867-B468-B7F386544DF4}
+		{D5381237-0DB9-4CB9-B445-83FD61F2286C} = {D0281135-9343-4867-B468-B7F386544DF4}
 	EndGlobalSection
 EndGlobal
