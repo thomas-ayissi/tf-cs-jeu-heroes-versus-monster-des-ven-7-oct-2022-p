@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Monstres
+Classe Abstract
+
+
+Ctor () : BASE(GetType().NAME)</title>
+<style>
+body {font-family:Arial,Helvetica,Sans-Serif; font-size:14px; line-height:1.5em;}
+body table {border-collapse:collapse;}
+body td {vertical-align:top; padding:0px;}
+.innerheader {font-weight:bold;}
+.toc_level_0{font-size:1.3em; margin:0 0 0 0em; font-weight:bold; overflow:hidden;}
+.title_level_0{font-size:1.4em; font-weight:bold; margin:0 0 0.5em 0; overflow:hidden;}
+.description_level_0{font-size:1.2em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.textnote_level_0{font-size:1.1em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.url_level_0{font-size:1.0em; margin:0.5em 0 0.5em 0; font-style:italic; overflow:hidden;}
+.toc_level_1{font-size:1.1em; margin:0.35em 0 0 0em; font-weight:bold; overflow:hidden;}
+.title_level_1{font-size:1.3em; font-weight:bold; margin:1.5em 0 0.5em 0; overflow:hidden;}
+.description_level_1{font-size:1.1em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.textnote_level_1{font-size:1.0em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.url_level_1{font-size:0.9em; margin:0.5em 0 0.5em 0; font-style:italic; overflow:hidden;}
+.toc_level_2{font-size:1.0em; margin:0.35em 0 0 0.5em; overflow:hidden;}
+.title_level_2{font-size:1.2em; font-weight:bold; margin:1.5em 0 0.5em 0; overflow:hidden;}
+.description_level_2{font-size:1em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.textnote_level_2{font-size:1.0em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.url_level_2{font-size:0.9em; margin:0.5em 0 0.5em 0; font-style:italic; overflow:hidden;}
+.toc_level_3{font-size:1.0em; margin:0.35em 0 0 1em; overflow:hidden;}
+.title_level_3{font-size:1.2em; font-weight:bold; margin:1.5em 0 0.5em 0; overflow:hidden;}
+.description_level_3{font-size:1em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.textnote_level_3{font-size:1.0em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.url_level_3{font-size:0.9em; margin:0.5em 0 0.5em 0; font-style:italic; overflow:hidden;}
+.toc {margin:0 0 2.5em 0;}
+.toc a:link {color:black; text-decoration:none;}
+.toc a:visited {color:black; text-decoration:none;}
+.toc a:active {color:black; text-decoration:none;}
+.toc a:hover {color:black; text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="toc"><div class="toc_level_0"><a href="#0">Monstres
+Classe Abstract
+
+
+Ctor () : BASE(GetType().NAME)</a></div>
+<div class="toc_level_1"><a href="#1">1: Loup
+
+LOUP :MONSTRE, iCuir(Hérite de "Monstre" et implémente du cuir, récupérable en les dépéçant)
+
+</a></div>
+<div class="toc_level_1"><a href="#2">2: Orque
+
+ORQUE : MONTRE, iCuir
+
+
+Force +1
+
+
+</a></div>
+<div class="toc_level_1"><a href="#3">3: Dragonnet
+
+DRAGONNET : MONSTRE, iCuir, iOr
+(Hérite de "Monstre" et implémente icuir et ior)
+- Endurance +1
+
+
+(Constructeur déjà fait "au-dessus" donc on va le laisser vide)</a></div>
+<div class="toc_level_1"><a href="#4">4: Personnages
+
+Classe Abstract
+-Endurance =&gt;Read Only
+-Force =&gt;Read Only
+-Point de vie =&gt;Private
+
+Ctor {
+        endurance = outils
+        force = outils
+        point de vie = endurance + modificateur (le modificateur est dans "outils")
+}
+
+(proposition du prof/finalement retenue) Calculs faits grâce à la classe outils.
+(proposition initiale)addition des 3 meilleurs résultats du tirage des dés
+
+Frapper CPersonnage {        (Condition  préliminaire : si résult &lt;= PTVie) {
+                    alors
+                        P.PTvie = Outil.ElevePTVie (Force)
+
+    }
+
+}</a></div>
+<div class="toc_level_2"><a href="#5">4.1: TF-CS-Jeu-Heoes-And-Monsters-Des-Ven-7-Oct-2022</a></div>
+<div class="toc_level_3"><a href="#7">4.1.1: Outils
+
+Interface
+
+OUTIL=&gt; STATIC
+INT Static
+Calcul 3 meilleurs() {
+ LIST &lt;INT&gt; LISTDE = NEW LIST&lt;INT&gt; ()
+    fot ( i=0 ; i&gt;4 ; i++) {
+    DE De1 = New DE(1,6)
+     ListDe.add(de1.lance())
+  }
+}
+
+
+INT MIN = ListDe.MIN
+    INT RESULT = 0
+    Foreach ( INT ITEM IN ListDe){
+      IF(ITEM != MIN){
+      RESULT += ITEM
+ }
+}
+
+
+RETURN RESULT (qui représente la somme des 3 plus grandes valeurs)
+
+INT STATIC  MODIFICATEUR () {} (ici l'on va calculer le modificateur)
+
+INT STATIC  ELEVE PTVIE () {} (ici l'on va calculer les gains en points de vie)
+
+INT  RECUPERE PTVIE () {} (Correction prof : à mettre dans la classe personnage + Vérifier que c'est un héros et non un monstre)
+
+
+
+Classe  Static
+ - Calcule mes 3 meilleurs réultats du tirage de dé (les 3 meilleurs sur 4)
+ - Modificateur
+ - Enlève PTVie
+ - Recupère PTVie
+(Il y a "quelque chose" à faire vu la similarité entre  "Enlève PTVie" et "Recupère PTVie")
+
+*Benjamin
+Fonction C# : list.min pour récupérer la plus petite.
+Puis refais une boucle"for" dans laquelle il dit exclut la plus petite et clacule toutes les autres.</a></div>
+<div class="toc_level_3"><a href="#8">4.1.2: Dé
+
+Classe
+
+-VoPMin
+-VoPMax
+
+
+Ctor (INT Max, INT Min) {
+       VoPMin = Min,
+      VoPMax = Max,
+}
+
+
+Lance() {
+              RANDOM Rand = New Random();
+Return    Rand.Next (ValMIN, ValMAX)
+}</a></div>
+<div class="toc_level_3"><a href="#9">4.1.3: Interface 
+
+(pour celles/ceux qui en ont les compétences, le prof conseille de remplacer l'interface par des attributs -meilleurs possibilités  et moins de code à écrire-)
+
+iOR
+PUBLIC INT OR {GET}
+
+iCuir
+PUBLIC INT CUIR {GET}
+
+
+
+iOr
+Icuir</a></div>
+<div class="toc_level_2"><a href="#6">4.2: Heros
+Classe Abstract
+
+
+Prorpriétés
+-Or =&gt; Get Set
+-Cuir =&gt; Get Set
+
+
+Ctor (String Nom) : BASE(MOM){
+   Nom =nom
+}
+
+
+//RESTAURE TOUS LES POINTS DE VIE (quand le héros se repose, il récupère tous ses points de vie).
+
+
+Se reposer ( ) {
+
+
+   SI PERSONNAGE.GET TYPE =TypeOF(Heros)
+
+           Fonction Protected de Personnage pour avoir des acces au private PTVie.
+          OUTILS.RECUPERER
+               (refaire le calcul ENDURANCE + MODIFICATEUR (ENDURANCE)
+ 
+ 
+}</a></div>
+<div class="toc_level_3"><a href="#10">4.2.1: Humains
+Bonus Force = 1
+Bonus Endurance =1
+
+
+Ctor (STRING NOM): BASE(NOM){ 
+  Nom = nom
+
+
+}
+
+
+</a></div>
+<div class="toc_level_3"><a href="#11">4.2.2: Nains
+Bonus Endurance = 2
+Ctor (STRING NOM) : BASE (Nom) {
+   Nom = nom
+
+
+}
+
+
+</a></div>
+</div><div class="title_level_0" id="0">Monstres<br><b><u>Classe Abstract</u></b><br><b><u><br></u></b><br>Ctor () : BASE(GetType().NAME)</div>
+<div class="title_level_1" id="1"><b>1: Lou</b><b>p</b><b><br></b><br><b>LOUP :MONSTRE, iCuir</b>(Hérite de "Monstre" et implémente du cuir, récupérable en les dépéçant)<br><br></div>
+<div class="title_level_1" id="2"><b>2: Orqu</b><b>e</b><br><br>ORQUE : MONTRE, iCuir<br><br><br>Force +1<br><br><br></div>
+<div class="title_level_1" id="3"><b>3: Dragonne</b><b>t</b><b><br></b><br><b>DRAGONNET : MONSTRE, iCuir, iOr</b><br><b>(</b>Hérite de "Monstre" et implémente icuir et ior)<br>- Endurance +1<br><br><br>(Constructeur déjà fait "au-dessus" donc on va le laisser vide)</div>
+<div class="title_level_1" id="4">4: Personnages<br><br><b style=""><u>Classe Abstract</u></b><br>-<b style="">Endurance</b> =&gt;Read Only<br>-<b style="">Force</b> =&gt;Read Only<br>-<b style="">Point de vie</b> =&gt;Private<br><br>Ctor {<br>&nbsp; &nbsp; &nbsp; &nbsp; endurance = outils<br>&nbsp; &nbsp; &nbsp; &nbsp; force = outils<br>&nbsp; &nbsp; &nbsp; &nbsp; point de vie = endurance + modificateur (le modificateur est dans "outils")<br>}<br><br>(proposition du prof/finalement retenue) Calculs faits grâce à la classe outils.<br>(proposition initiale)addition des 3 meilleurs résultats du tirage des dés<br><br>Frapper CPersonnage {<span style="">&nbsp; &nbsp; &nbsp; &nbsp; (Condition &nbsp;préliminaire : si résult &lt;= PTVie) {</span><br><span style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alors<br></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P.PTvie = Outil.ElevePTVie (Force)<br><br>&nbsp; &nbsp; }<br><br>}</div>
+<div class="title_level_2" id="5"><span style="">4.1: TF-CS-Jeu-Heoes-And-Monsters-Des-Ven-7-Oct-2022</span></div>
+<div class="title_level_3" id="7"><b>4.1.1: Outils<br></b><br><b><u>Interface</u></b><b><u><br></u></b><br><u>OUTIL=&gt; STATIC</u><br>INT Static<br>Calcul 3 meilleurs() {<br>&nbsp;LIST &lt;INT&gt; LISTDE = NEW LIST&lt;INT&gt; ()<br>&nbsp; &nbsp; fot ( i=0 ; i&gt;4 ; i++) {<br>&nbsp; &nbsp; DE De1 = New DE(1,6)<br>&nbsp; &nbsp; &nbsp;ListDe.add(de1.lance())<br>&nbsp; }<br>}<br><b><u><br></u></b><br>INT MIN = ListDe.MIN<br>&nbsp; &nbsp; INT RESULT = 0<br>&nbsp; &nbsp; Foreach ( INT ITEM IN ListDe){<br>&nbsp; &nbsp; &nbsp; IF(ITEM != MIN){<br>&nbsp; &nbsp; &nbsp; RESULT += ITEM<br>&nbsp;}<br>}<br><br><br>RETURN RESULT (qui représente la somme des 3 plus grandes valeurs)<br><br>INT STATIC &nbsp;MODIFICATEUR () {} (ici l'on va calculer le modificateur)<br><br>INT STATIC &nbsp;ELEVE PTVIE () {}&nbsp;(ici l'on va calculer les gains en points de vie)<br><br>INT &nbsp;RECUPERE PTVIE () {}&nbsp;(Correction prof : à mettre dans la classe personnage + Vérifier que c'est un héros et non un monstre)<br><br><br><br>Classe &nbsp;Static<br>&nbsp;- Calcule mes 3 meilleurs réultats du tirage de dé (les 3 meilleurs sur 4)<br>&nbsp;- Modificateur<br>&nbsp;- Enlève PTVie<br>&nbsp;- Recupère PTVie<br>(Il y a "quelque chose" à faire vu la similarité entre &nbsp;"Enlève PTVie" et "Recupère PTVie")<br><br>*Benjamin<br>Fonction C# : list.min pour récupérer la plus petite.<br>Puis refais une boucle"for" dans laquelle il dit exclut la plus petite et clacule toutes les autres.</div>
+<div class="title_level_3" id="8"><b>4.1.2: Dé</b><br><br><b><u>Classe</u></b><b><u><br></u></b><br>-VoPMin<br>-VoPMax<br><br><br>Ctor (INT Max, INT Min) {<br>&nbsp; &nbsp; &nbsp; &nbsp;VoPMin = Min,<br>&nbsp; &nbsp; &nbsp; VoPMax = Max,<br>}<br><br><br>Lance() {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RANDOM Rand = New Random();<br>Return &nbsp; &nbsp;Rand.Next (ValMIN, ValMAX)<br>}</div>
+<div class="title_level_3" id="9"><b>4.1.3: Interface&nbsp;</b><span style="caret-color: rgb(0, 31, 63);"><br></span><br><span style="caret-color: rgb(0, 31, 63);">(pour celles/ceux qui en ont les compétences, le prof conseille de remplacer l'interface par des attributs -meilleurs possibilités &nbsp;et moins de code à écrire-)<br></span><br>iOR<br>PUBLIC INT OR {GET}<br><br>iCuir<br>PUBLIC INT CUIR {GET}<br><br><br><br>iOr<br>Icuir</div>
+<div class="title_level_2" id="6">4.2: Heros<br><b><u>Classe Abstract</u></b><br><b><u><br></u></b><br><b><u>Prorpriétés</u></b><br>-Or =&gt; Get Set<br>-Cuir =&gt; Get Set<br><br><br>Ctor (String Nom) : BASE(MOM){<br>&nbsp; &nbsp;Nom =nom<br>}<br><br><br>//RESTAURE TOUS LES POINTS DE VIE (quand le héros se repose, il récupère tous ses points de vie).<br><br><br>Se reposer ( ) {<br><br><br>&nbsp; &nbsp;SI PERSONNAGE.GET TYPE =TypeOF(Heros)<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Fonction Protected de Personnage pour avoir des acces au private PTVie.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OUTILS.RECUPERER<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(refaire le calcul ENDURANCE + MODIFICATEUR (ENDURANCE)<br>&nbsp;<br>&nbsp;<br>}</div>
+<div class="title_level_3" id="10">4.2.1: Humains<br>Bonus Force = 1<br>Bonus Endurance =1<br><br><br>Ctor (STRING NOM): BASE(NOM){&nbsp;<br>&nbsp; Nom = nom<br><br><br>}<br><br><br></div>
+<div class="title_level_3" id="11">4.2.2: Nains<br>Bonus Endurance = 2<br>Ctor (STRING NOM) : BASE (Nom) {<br>&nbsp; &nbsp;Nom = nom<br><br><br>}<br><br><br></div>
+</body>
+</html>
