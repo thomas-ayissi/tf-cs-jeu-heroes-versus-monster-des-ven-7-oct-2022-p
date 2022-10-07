@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Personnages
+
+Classe Abstract
+-Endurance =&gt;Read Only
+-Force =&gt;Read Only
+-Point de vie =&gt;Private
+
+Ctor {
+        endurance = outils
+        force = outils
+        point de vie = endurance + modificateur (le modificateur est dans "outils")
+}
+
+(proposition du prof/finalement retenue) Calculs faits grâce à la classe outils.
+(proposition initiale)addition des 3 meilleurs résultats du tirage des dés
+
+Frapper CPersonnage {        (Condition  préliminaire : si résult &lt;= PTVie) {
+                    alors
+                        P.PTvie = Outil.ElevePTVie (Force)
+
+    }
+
+}</title>
+<style>
+body {font-family:Arial,Helvetica,Sans-Serif; font-size:14px; line-height:1.5em;}
+body table {border-collapse:collapse;}
+body td {vertical-align:top; padding:0px;}
+.innerheader {font-weight:bold;}
+.toc_level_0{font-size:1.3em; margin:0 0 0 0em; font-weight:bold; overflow:hidden;}
+.title_level_0{font-size:1.4em; font-weight:bold; margin:0 0 0.5em 0; overflow:hidden;}
+.description_level_0{font-size:1.2em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.textnote_level_0{font-size:1.1em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.url_level_0{font-size:1.0em; margin:0.5em 0 0.5em 0; font-style:italic; overflow:hidden;}
+.toc_level_1{font-size:1.1em; margin:0.35em 0 0 0em; font-weight:bold; overflow:hidden;}
+.title_level_1{font-size:1.3em; font-weight:bold; margin:1.5em 0 0.5em 0; overflow:hidden;}
+.description_level_1{font-size:1.1em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.textnote_level_1{font-size:1.0em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.url_level_1{font-size:0.9em; margin:0.5em 0 0.5em 0; font-style:italic; overflow:hidden;}
+.toc_level_2{font-size:1.0em; margin:0.35em 0 0 0.5em; overflow:hidden;}
+.title_level_2{font-size:1.2em; font-weight:bold; margin:1.5em 0 0.5em 0; overflow:hidden;}
+.description_level_2{font-size:1em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.textnote_level_2{font-size:1.0em; margin:0.5em 0 0.5em 0; overflow:hidden;}
+.url_level_2{font-size:0.9em; margin:0.5em 0 0.5em 0; font-style:italic; overflow:hidden;}
+.toc {margin:0 0 2.5em 0;}
+.toc a:link {color:black; text-decoration:none;}
+.toc a:visited {color:black; text-decoration:none;}
+.toc a:active {color:black; text-decoration:none;}
+.toc a:hover {color:black; text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="toc"><div class="toc_level_0"><a href="#0">Personnages
+
+Classe Abstract
+-Endurance =&gt;Read Only
+-Force =&gt;Read Only
+-Point de vie =&gt;Private
+
+Ctor {
+        endurance = outils
+        force = outils
+        point de vie = endurance + modificateur (le modificateur est dans "outils")
+}
+
+(proposition du prof/finalement retenue) Calculs faits grâce à la classe outils.
+(proposition initiale)addition des 3 meilleurs résultats du tirage des dés
+
+Frapper CPersonnage {        (Condition  préliminaire : si résult &lt;= PTVie) {
+                    alors
+                        P.PTvie = Outil.ElevePTVie (Force)
+
+    }
+
+}</a></div>
+<div class="toc_level_1"><a href="#1">1: Heros
+Classe Abstract
+
+
+Prorpriétés
+-Or =&gt; Get Set
+-Cuir =&gt; Get Set
+
+
+Ctor (String Nom) : BASE(MOM){
+   Nom =nom
+}
+
+
+//RESTAURE TOUS LES POINTS DE VIE (quand le héros se repose, il récupère tous ses points de vie).
+
+
+Se reposer ( ) {
+
+
+   SI PERSONNAGE.GET TYPE =TypeOF(Heros)
+
+           Fonction Protected de Personnage pour avoir des acces au private PTVie.
+          OUTILS.RECUPERER
+               (refaire le calcul ENDURANCE + MODIFICATEUR (ENDURANCE)
+ 
+ 
+}</a></div>
+<div class="toc_level_2"><a href="#4">1.1: Humains
+Bonus Force = 1
+Bonus Endurance =1
+
+
+Ctor (STRING NOM): BASE(NOM){ 
+  Nom = nom
+
+
+}
+
+
+</a></div>
+<div class="toc_level_2"><a href="#5">1.2: Nains
+Bonus Endurance = 2
+Ctor (STRING NOM) : BASE (Nom) {
+   Nom = nom
+
+
+}
+
+
+</a></div>
+<div class="toc_level_1"><a href="#2">2: Monstres
+Classe Abstract
+
+
+Ctor () : BASE(GetType().NAME)</a></div>
+<div class="toc_level_2"><a href="#6">2.1: Loup
+-Possèdent du cuir(récupérable en les dépéçant)
+
+Hérite de "Monstre" et implémente :
+-iCuir
+</a></div>
+<div class="toc_level_2"><a href="#7">2.2: Orque
++1 en Force (For) 
+- Possèdent de l'or
+
+Hérite de "Monstre" et implémente :
+-iOr
+
+</a></div>
+<div class="toc_level_2"><a href="#8">2.3: Dragonnet 
++1 en Endurance (End) 
+-Possèdent de l'or
+-Possèdent du cuir(récupérable en les dépéçant)
+
+Hérite de "Monstre" et implémente :
+-iOr
+-iCuir
+</a></div>
+<div class="toc_level_1"><a href="#3">3: TF-CS-Jeu-Heoes-And-Monsters-Des-Ven-7-Oct-2022</a></div>
+<div class="toc_level_2"><a href="#9">3.1: Outils
+
+Interface
+
+Classe  Static
+ - Calcule mes 3 meilleurs réultats du tirage de dé
+ - Modificateur
+ - Enlève PTVie
+ - Recupère PTVie
+(Il y a "quelque chose" à faire vu la similarité entre  "Enlève PTVie" et "Recupère PTVie")</a></div>
+<div class="toc_level_2"><a href="#10">3.2: Dé
+
+
+Classe</a></div>
+<div class="toc_level_2"><a href="#11">3.3: Interface
+
+
+iOr
+Icuir</a></div>
+</div><div class="title_level_0" id="0">Personnages<br><br><b style=""><u>Classe Abstract</u></b><br>-<b style="">Endurance</b> =&gt;Read Only<br>-<b style="">Force</b> =&gt;Read Only<br>-<b style="">Point de vie</b> =&gt;Private<br><br>Ctor {<br>&nbsp; &nbsp; &nbsp; &nbsp; endurance = outils<br>&nbsp; &nbsp; &nbsp; &nbsp; force = outils<br>&nbsp; &nbsp; &nbsp; &nbsp; point de vie = endurance + modificateur (le modificateur est dans "outils")<br>}<br><br>(proposition du prof/finalement retenue) Calculs faits grâce à la classe outils.<br>(proposition initiale)addition des 3 meilleurs résultats du tirage des dés<br><br>Frapper CPersonnage {<span style="">&nbsp; &nbsp; &nbsp; &nbsp; (Condition &nbsp;préliminaire : si résult &lt;= PTVie) {</span><br><span style="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alors<br></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P.PTvie = Outil.ElevePTVie (Force)<br><br>&nbsp; &nbsp; }<br><br>}</div>
+<div class="title_level_1" id="1">1: Heros<br><b><u>Classe Abstract</u></b><br><b><u><br></u></b><br><b><u>Prorpriétés</u></b><br>-Or =&gt; Get Set<br>-Cuir =&gt; Get Set<br><br><br>Ctor (String Nom) : BASE(MOM){<br>&nbsp; &nbsp;Nom =nom<br>}<br><br><br>//RESTAURE TOUS LES POINTS DE VIE (quand le héros se repose, il récupère tous ses points de vie).<br><br><br>Se reposer ( ) {<br><br><br>&nbsp; &nbsp;SI PERSONNAGE.GET TYPE =TypeOF(Heros)<br><br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Fonction Protected de Personnage pour avoir des acces au private PTVie.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; OUTILS.RECUPERER<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(refaire le calcul ENDURANCE + MODIFICATEUR (ENDURANCE)<br>&nbsp;<br>&nbsp;<br>}</div>
+<div class="title_level_2" id="4">1.1: Humains<br>Bonus Force = 1<br>Bonus Endurance =1<br><br><br>Ctor (STRING NOM): BASE(NOM){&nbsp;<br>&nbsp; Nom = nom<br><br><br>}<br><br><br></div>
+<div class="title_level_2" id="5">1.2: Nains<br>Bonus Endurance = 2<br>Ctor (STRING NOM) : BASE (Nom) {<br>&nbsp; &nbsp;Nom = nom<br><br><br>}<br><br><br></div>
+<div class="title_level_1" id="2">2: Monstres<br><b><u>Classe Abstract</u></b><br><b><u><br></u></b><br>Ctor () : BASE(GetType().NAME)</div>
+<div class="title_level_2" id="6"><b>2.1: Loup</b><br>-Possèdent du cuir(récupérable en les dépéçant)<br><br>Hérite de "Monstre" et implémente :<br><b>-iCuir</b><br></div>
+<div class="title_level_2" id="7"><b>2.2: Orque</b><br>+1 en Force (For)&nbsp;<br>- Possèdent de l'or<br><br>Hérite de "Monstre" et implémente :<br><b>-iOr</b><br><br></div>
+<div class="title_level_2" id="8"><b>2.3: Dragonne</b><b>t&nbsp;</b><b><br></b>+1 en Endurance (End)&nbsp;<br>-Possèdent de l'or<br>-Possèdent du cuir(récupérable en les dépéçant)<br><br>Hérite de "Monstre" et implémente :<br><b>-iOr</b><br><b>-iCuir</b><br></div>
+<div class="title_level_1" id="3"><span style="">3: TF-CS-Jeu-Heoes-And-Monsters-Des-Ven-7-Oct-2022</span></div>
+<div class="title_level_2" id="9"><b>3.1: Outils<br></b><br><b><u>Interface</u></b><br><br>Classe &nbsp;Static<br>&nbsp;- Calcule mes 3 meilleurs réultats du tirage de dé<br>&nbsp;- Modificateur<br>&nbsp;- Enlève PTVie<br>&nbsp;- Recupère PTVie<br>(Il y a "quelque chose" à faire vu la similarité entre &nbsp;"Enlève PTVie" et "Recupère PTVie")</div>
+<div class="title_level_2" id="10"><b>3.2: Dé</b><br><br><br><b><u>Classe</u></b></div>
+<div class="title_level_2" id="11"><b>3.3: Interface</b><br><br><br>iOr<br>Icuir</div>
+</body>
+</html>
